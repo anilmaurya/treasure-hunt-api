@@ -9,7 +9,7 @@
 #  updated_at       :datetime         not null
 #
 class Winner < ApplicationRecord
-    validates :name, uniqueness: true
+    validates :name, uniqueness: {scope: :treasure_hunt_id}
     belongs_to :treasure_hunt
 
     def puzzle_name
