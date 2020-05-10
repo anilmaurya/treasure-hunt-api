@@ -8,7 +8,7 @@ class WinnerService::Index
     end
 
     def set_result
-        @result = Winner.all.select(:name).as_json(only: :name)
+        @result = Winner.includes(:treasure_hunt).all.as_json(only: :name, methods: [:puzzle_name])
     end
 
 end

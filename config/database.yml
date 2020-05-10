@@ -23,6 +23,8 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
+  port: 5432
   database: treasure_hunt_api_development
 
   # The specified database role being used to connect to postgres.
